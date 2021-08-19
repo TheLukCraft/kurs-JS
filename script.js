@@ -189,7 +189,7 @@ if(f>g)
     console.log('f < g');
 }
 
-let promo = 20%
+let promo = '50%';
 switch(promo)
 {
     case '10%':
@@ -200,4 +200,15 @@ switch(promo)
         break;
     case '30%':
         console.log('Dziś mamy 30% zniżki');
+        break;
+    default:
+        console.log(`Dziś mamy ${promo} zniżki`);
+}
+
+// let u = 10
+// (u % 2 === 0) ? `Tak, wartość ${u} jest parzysta` : `Nie, wartość ${u} nie jest parzysta`
+
+for(let i =0; i < 10; i++)
+{
+    console.log(i);
 }
