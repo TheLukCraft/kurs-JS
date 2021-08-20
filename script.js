@@ -264,4 +264,72 @@ for (const num of tab2)
 //metoda unshift dodaje elementy na początku tablicy
 //metoda shift usuwa element z indeksem 0 
 //metoda push dodaje elementy na koniec tablicy
-//
+//metoda pop usuwa ostatni element z tablicy
+//unshifta praktycznie się nie używa, bo zmienia indeksy
+
+const tab3 = [1,2,3,4]
+tab3.unshift('123')
+console.log(tab3);
+
+tab3.shift();
+console.log(tab3);
+
+tab3.push('555')
+console.log(tab3);
+
+tab3.pop();
+console.log(tab3);
+
+//Metody na tablicach
+function multiply (dd)
+{
+    return dd * 2
+}
+
+//metoda map służy do tego, że działa podobnie jak foreach, czyli przechodzi po każdym elemencie 
+const varMap = tab3.map(multiply)
+console.log(tab3);
+console.log(varMap);
+
+//konkatencja dwóch tablic
+const abc = ['a', 'b', 'c'] 
+const xyz = abc.concat('x', 'y', 'z')
+console.log(xyz);
+
+//spread - rozmarować
+console.log(abc);
+console.log(...abc);
+
+//przykład konkatenacji i spreada
+const meals = ['schabowy', 'mielone']
+const drinks = ['pepsi', 'cola', 'fanta']
+const menu = [...meals, ...drinks]
+console.log(menu);
+
+
+const menu2 = meals.concat(drinks)
+console.log(menu2);
+
+//ZADANIE
+const num123 = [0,0,1,1,2,2,2]
+const colors2 = ['red', 'green', 'blue', 'true', 123]
+const cars = [123, 'true', 'audi', 'bmw', 'mercedes', 'ferrari' , '😅', '😂']
+
+console.log(num123);
+
+const numTest = num123.slice(0, 2)
+console.log(numTest);
+
+//wycinanie 2 ostatnich itemów w tablicy
+const numTest2 = num123.slice(num123.length-3, num123.length)
+console.log(numTest2);
+
+//wycinanie 2 ostatnich itemów w tablicy
+const colorTest = colors2.splice(colors2.length-2, colors2.length)
+console.log(colorTest);
+
+const carsTest = cars.splice(2,4)
+console.log(carsTest);
+
+//foreach
+num123.forEach()
