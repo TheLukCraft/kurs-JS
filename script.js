@@ -332,4 +332,18 @@ const carsTest = cars.splice(2,4)
 console.log(carsTest);
 
 //foreach
-num123.forEach()
+// num123.forEach()
+
+//filter function 
+const tab4 = [1,2,3,4]
+
+function tab4fun(x)
+{
+    return x % 2 === 0
+}
+console.log(tab4.filter(tab4fun));
+
+tab4.forEach(varTest => console.log(varTest * 5))
+
+//IndexOf - sprawdza pozycję danego elementu. Jeśli nie istnieje jest -1
+console.log(tab4.indexOf(2));
