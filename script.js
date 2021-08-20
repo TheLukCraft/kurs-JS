@@ -208,7 +208,60 @@ switch(promo)
 // let u = 10
 // (u % 2 === 0) ? `Tak, wartość ${u} jest parzysta` : `Nie, wartość ${u} nie jest parzysta`
 
+/*PĘTLE*/
+
 for(let i =0; i < 10; i++)
 {
     console.log(i);
 }
+
+let i = 0;
+while( i < 5)
+{
+    console.log(i);
+    i++
+}
+
+do{
+    i++
+    console.log(i);
+} while (i < 2)
+
+//for of - nie korzystać kiedy chcemy się dostać do konkretnego indeksu
+const numbers = [1,2,3,4]
+for (const number of numbers)
+{
+    console.log(number * 2);
+}
+
+//ZADANIE 
+const tab = ['Kraków', 'Katowice', 'Chorzów']
+for (let p = 0; p < tab.length; p++)
+{
+    console.log(`To miasto nazywa się ${tab[p].toUpperCase()}`);
+}
+
+let mm = 0;
+while(mm < 10)
+{
+    mm += 2
+    console.log(mm);
+}
+
+let xx = 20
+do{
+   xx -= 3
+} while(xx > 0)
+console.log(xx);
+
+let tab2 = [5, 8, 10, 23, 48, 60]
+for (const num of tab2)
+{
+    num % 2 == 0 ? console.log(`Liczba ${num} jest parzysta`) : console.log(`Liczba ${num} nie jest parzysta`); 
+}
+
+/* TABLICE */
+//metoda unshift dodaje elementy na początku tablicy
+//metoda shift usuwa element z indeksem 0 
+//metoda push dodaje elementy na koniec tablicy
+//
