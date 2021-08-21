@@ -406,3 +406,76 @@ for(let i = 0; i < tabColor; i++)
 
 //FUNKCJE
 
+function testFunc()
+{
+    console.log('test');
+}
+testFunc();
+
+function details(name, age)
+{
+    console.log(`Cześć, mam na imię ${name} oraz mam ${age} lat`);
+}
+details('Łukasz', 24)
+
+//funkcji anonimowych należy unikać
+
+//funckja strzałkowa
+
+const test3 = name => console.log(name);
+test3('Łukasz')
+
+const test4 = (name) => console.log(name);
+test4('Łukasz')
+
+const test5 = (name, age) => console.log(`${name} ma ${age} lat`);
+test5('Łukasz', 24)
+//lepiej korzystać przy parametrach (), ponieważ jest czytelniejszy kod
+
+//przypisywanie do parametrów funkcji
+const hello = (name = 'Jacek') => console.log(`Witaj ${name}`);
+hello()
+
+//SPREAD i REST
+const arr = [1,2,3,4]
+console.log(arr);
+console.log(...arr);
+
+//REST nieskończona ilość argumentów przypisana do zmiennej, która zamienia się w tablice    
+const numtab = (x, y, ...z) =>
+{
+    console.log(x, y, z);
+
+    console.log(z.map(temp => temp * 2));
+    console.log(x + y);
+}
+
+numtab(13,12,444,356,350,509, 'ab', true) 
+
+//ZADANIA
+let score
+const add = (x, y) =>{
+    score = x + y
+    if(score % 2 === 0)
+    evenMsg()
+    else 
+    oddMsg()
+}
+const evenMsg = () => 
+{
+    console.log(`Liczba ${score} jest parzysta`);
+}
+const oddMsg = () => 
+{
+    console.log(`Liczba ${score} jest nieparzysta`);
+}
+add(10,11)
+
+
+
+const fahrenheit = temp =>
+{ 
+    return tempg * 1.8 + 32
+}
+
+console.log(fahrenheit(10));      
