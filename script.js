@@ -347,3 +347,62 @@ tab4.forEach(varTest => console.log(varTest * 5))
 
 //IndexOf - sprawdza pozycję danego elementu. Jeśli nie istnieje jest -1
 console.log(tab4.indexOf(2));
+
+//różnica między forEach a map
+//map zwraca informacje np.
+const mapNumbers = tab4.map(varTemp => varTemp *2)
+console.log(mapNumbers);
+
+//w przypadku forEach nie tworzymy nowej tablicy
+const mapNumbers2 = tab4.forEach(varTemp => varTemp * 2)
+console.log(mapNumbers2);
+
+//ZADANIE tablice
+const letters = ['c', 'd']
+letters.unshift('a', 'b')
+letters.push('e', 'f')
+console.log(letters);
+console.log(letters.includes('c'));
+
+
+const numbersTab = [1,2,3,4,5,6]
+const food = ['pizza','kebab', 'fries']
+const tempMenu = numbersTab.concat(food)
+console.log(...tempMenu);
+
+
+const tabNum = [1,5,13,26,48]
+function tempFunc(x)
+{
+    return x * 5
+}
+console.log(tabNum.map(tempFunc));
+
+for(const temp of tabNum)
+{
+    if(temp % 2 ==0)
+    {
+        console.log(`Liczba jest parzysta: ${temp}`);
+    }else
+    {
+        console.log(`Liczba jest nieparzysta: ${temp}`);
+    }
+}
+
+
+
+const tabColor = ['red']
+tabColor.unshift('blue');
+tabColor.push('yellow')
+for(let i = 0; i < tabColor.length; i++)
+{
+    console.log(`Mój ulubiony kolor to: ${tabColor[i]}`);
+}
+
+for(let i = 0; i < tabColor; i++)
+{
+    console.log(`ulubiony kolor to ${tabColor[i].CharAt(0).toUpperCase() + tabColor.slice(1)}`);
+}
+
+//FUNKCJE
+
