@@ -473,9 +473,115 @@ add(10,11)
 
 
 
-const fahrenheit = temp =>
-{ 
-    return tempg * 1.8 + 32
+// const fahrenheit = temp =>
+// { 
+//     return tempg * 1.8 + 32
+// }
+
+// console.log(fahrenheit(10));      
+
+//DOM -reprezentacja naszej strony internetowej
+//Windows - obiekt globalny, cała strona. Znajduje się w środku DOM
+
+// getElementById 
+const doc = document.getElementById('item')
+console.log(doc);
+
+//getElementsByTagName
+
+const doc2 = document.getElementsByTagName('li')
+console.log(doc2);
+
+//getElementByClassName
+
+const doc3 = document.getElementsByClassName('test')
+console.log(doc3);
+
+//NOWSZE ZAPISY I CZĘŚCIEJ UŻYWANE
+//querySelector - działa tak, że na pierwszym napotkanym obiekcie kończy pracę
+const docc = document.querySelector('li')
+console.log(docc);
+
+//querySelectorAll
+const docc2 = document.querySelectorAll('li')
+console.log(docc2);
+
+//zawężanie poszukiwań
+// const docc3 = ulList.querySelector('ul')
+
+//ZADANIE
+const heading = document.querySelector('h1')
+console.log(heading);
+
+const pAll = document.querySelector('p')
+console.log(pAll);
+
+const div = document.querySelector('div .test')
+console.log(div);
+
+const id = document.querySelector('#test')
+console.log(id);
+
+//Tworzenie i dodawanie elementów na stronie
+const ulList = document.createElement('ul')
+const liItem = document.createElement('li')
+liItem.textContent = 'Cześć'
+
+//nie korzystać z appendchild
+document.body.appendChild(ulList)
+// liItem.appendChild(liItem)
+
+//ZADANIE
+// const divSel = document.querySelector('div .hey')
+// const pPar = document.createElement('p')
+// divSel.append(pPar)
+
+//zadamoe 2
+const divv = document.querySelector('div')
+const pp = document.createElement('p')
+const headingTwo = document.createElement('h2')
+
+divv.append(pp, headingTwo, 'cześć')
+
+//textContent, innerText, OuterHTML & InnerHTML
+const btnn = document.querySelector('button')
+
+// console.log(btn.outerHTML);
+
+//textContent i innerText - to jest to samo, ale
+//innerText zwraca sam text, a textContent wszystko nawet z tagami i stylami
+//outerHTML edytuje całość z tagami, więc można wstawić nowy znacznik zamiast istniejącego
+//innerHTML edytuje tylko tekst w znaczniku
+//innerHTML jest niebezpieczny przy wprowadzeniu tekstu przez użytkownika!
+
+btnn.textContent = 'adsdsas'
+
+//usuwanie elementów
+const divv2 = document.querySelector('div')
+const pp2 = document.querySelector('p')
+
+//usuwamy dziecko
+
+divv2.remove(pp2)
+//lub też 
+pp2.remove()
+divv2.remove()
+
+//addEventListener
+// target.addEventListener(type, listener)
+//listenerów musimy używać na samym dole skryptów, ponieważ funkcje trzeba wczytać wcześcniej
+const btn1 = document.querySelector('.btn-1')
+const btn2 = document.querySelector('.btn-2')
+const btn3 = document.querySelector('.btn-3')
+
+btn1.addEventListener('click', function() {
+    console.log('kliknięto mnie');
+})
+
+btn2.addEventListener('mouseover', () => console.log('najechano na mnie'))
+
+const funcTest = () => {
+    console.log('podwójny klik')
 }
 
-console.log(fahrenheit(10));      
+btn3.addEventListener('dblclick', funcTest)
