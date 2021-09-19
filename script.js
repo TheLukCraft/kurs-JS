@@ -570,6 +570,8 @@ divv2.remove()
 //addEventListener
 // target.addEventListener(type, listener)
 //listenerów musimy używać na samym dole skryptów, ponieważ funkcje trzeba wczytać wcześcniej
+//nie działa na wielu obiektach np. gdybyśmy chcieli się dostać do grupy przycisków
+//ale można używać foreach
 const btn1 = document.querySelector('.btn-1')
 const btn2 = document.querySelector('.btn-2')
 const btn3 = document.querySelector('.btn-3')
@@ -584,4 +586,151 @@ const funcTest = () => {
     console.log('podwójny klik')
 }
 
-btn3.addEventListener('dblclick', funcTest)
+// btn3.addEventListener('dblclick', funcTest)
+
+// const btnMulti = document.querySelector('button')
+// const smile = () => {
+//     console.log('😂');
+// }
+
+// btnMulti.forEach(x => x.addEventListener('click', smile))
+
+//Eventy
+//do eventów odwołujemy się za pomocą e
+//najczęściej e.target i coś tu robimy
+const eve = document.querySelector('.eventE')
+const even = (e) => 
+{
+    console.log(e);
+    console.log(e.target);
+    console.log(e.target.classList);
+}
+
+eve.addEventListener('click', even)
+
+//przechwytywanie bąbelkowanie - bubbling capturing
+//delagcja zdarzeń
+// const allCircles = document.querySelector('.circle')
+// const gold = document.querySelector('.gold')
+// const lime = document.querySelector('.lime')
+
+// allCircles.forEach(x => x.addEventListener('click', () => console.log(circle)))
+
+// const newCircle = document.createElement('div')
+// newCircle.classList.add('circle', 'purple')
+// gold.append(newCircle)
+
+//style w js
+//nie powinniśmy korzystać z tego
+const styl = document.querySelector('.styl')
+
+styl.style.fontSize = '48px';
+styl.style.backgroundColor = 'tomato'
+styl.style.padding = '20x 40px'
+styl.style.borderRadius = '8px'
+
+//lepszym sposobem jest dodanie klasy
+
+// styl.classList.add('nazwaKlasy')
+//add remove class
+// const addBtn = document.querySelector('.add')
+// const removeBtn = document.querySelector('.remove')
+// const toggleBtn = document.querySelector('.toggle')
+// const text = document.querySelector('p')
+
+// const addClass = () =>
+// {
+//     text.classList.add('test')
+// }
+
+// const removeClass = () =>
+// {
+//     text.classLis.remove('test')
+// }
+
+// const toggleClass = () =>
+// {
+//     text.classList.toggle('test')
+// }
+
+// addBtn.addEventListener('click', addClass)
+// removeBtn.addEventListener('click', removeClass)
+// toggleBtn.addEventListener('click', toggleBtn)
+
+//setTImeout - funkcja wykona się po 1 sek
+// setTimeout(test, 1000)
+
+//setINterval - funkcja będzie się wykonywać co sekundę
+// setInterval(test, 1000)
+
+// confirm('chcesz?') ? console.log('tak') : console.log('nie');
+// const name2 = prompt('Cześć, jak masz na imię?')
+// console.log(name2);
+
+//Math random 0 - 1
+console.log(Math.random());
+
+//1 - 10
+const number = Math.random() *10
+
+//liczby całkowite losowe
+console.log(Math.floor(number));
+
+//Atrybuty
+const link = document.querySelector('a')
+const img = document.querySelector('img')
+const p = document.querySelector('p')
+
+link.setAttribute('href', '#')
+console.log(img.getAttribute('alt'));
+p.removeAttribute('style')
+
+//data trybuty
+const divTag = document.querySelector('[data-number="23"]')
+console.log(divTag.dataset.moreInfo);
+
+divTag.setAttribute('data-test', '123')
+console.log(divTag.dataset);
+
+//obiekty
+
+const newUser = {
+    name: 'Lukasz',
+    age: 23,
+    car: {
+        brand: 'Audi',
+        color: 'blue',
+        sound () {
+            console.log('brum brum');
+        }
+    }
+};
+
+console.log(newUser.name);
+console.log(newUser.car.brand);
+newUser.car.sound()
+
+
+// const user = {
+//     name: 'Iza',
+//     age: 23,
+//     ['fav-name'] : 'Lukasz'
+// }
+
+// user.country = 'Polska'
+// //niedozwolona metoda z '-' jak inaczej zapisać
+// user['fav-color'] = 'niebieski'
+
+// console.log(user);
+
+// const name2 = 'Drops';
+// const age2 = 5;
+
+// const dog ={
+//     name2,
+//     ag2
+// }
+// console.log(dog);
+
+x = "ES6"
+console.log(`Hello, ${x}!`);
